@@ -7,7 +7,7 @@ const RecoStart = lazy(() => import('../modules/reco-start/RecoStart'))
 export const Layout = () => {
     return (
         <Suspense fallback={null}>
-            <BrowserRouter basename='/' future={{ v7_startTransition: true }}>
+            <BrowserRouter basename='/' future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
                 <Routes>
                     <Route path={`/`} element={<RecoStart />} />
                     <Route path={`/${APP_ROUTES_ENUM.ABOUT}/*`} element={<RecoStart />} />
