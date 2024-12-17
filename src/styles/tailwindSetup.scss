@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .allselect {
+        -webkit-touch-callout: all;
+        -webkit-user-select: all;
+        -khtml-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+    }
+
+    html,
+    body {
+        @apply scrollbar-thumb-blue-500/10 scrollbar-track-transparent scrollbar-thin font-inter flex h-full w-full flex-col overflow-hidden text-base;
+    }
+
+    #root {
+        @apply scrollbar-thumb-blue-500/50 relative scrollbar-track-transparent scrollbar-thin flex w-full flex-auto overflow-hidden;
+    }
+
+    div {
+        @apply focus-visible:outline-none;
+    }
+
+    pre {
+        @apply m-0 p-0;
+    }
+
+    blockquote {
+        @apply italic border-l-solid border-l-blue-500/50 font-roboto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @apply font-inter m-0 p-0 tracking-wider leading-normal duration-300;
+    }
+
+    h6 {
+        @apply text-base font-inter;
+    }
+
+    a,
+    a:focus,
+    a:active,
+    a:visited {
+        @apply no-underline font-normal tracking-normal duration-300;
+    }
+
+    u span {
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+        color: inherit;
+    }
+
+    ul {
+        @apply m-0 p-0;
+    }
+
+    li {
+        @apply list-none;
+    }
+}
+
+@layer utilities {
+    .border-solid {
+        border-style: solid;
+    }
+
+    .border-r-solid {
+        border-right-style: solid;
+    }
+
+    .border-l-solid {
+        border-left-style: solid;
+    }
+
+    .border-b-solid {
+        border-bottom-style: solid;
+    }
+
+    .border-b-dashed {
+        border-bottom-style: dashed;
+    }
+
+    .border-t-solid {
+        border-top-style: solid;
+    }
+
+    .absolute-center {
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .overflow-wrap-anywhere {
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .overflow-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-style {
+        @apply scrollbar-thumb-blue-500/10 scrollbar-track-transparent scrollbar-thin;
+    }
+}

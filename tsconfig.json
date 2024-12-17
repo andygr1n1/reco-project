@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "target": "esnext",
+        "module": "esnext",
+        "lib": ["dom", "dom.iterable", "esnext", "WebWorker"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowImportingTsExtensions": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "strictNullChecks": true,
+        "types": ["vite/client", "node"],
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": false,
+        "noImplicitReturns": true,
+        "noUnusedParameters": true,
+        "noUncheckedIndexedAccess": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "experimentalDecorators": false,
+        "verbatimModuleSyntax": true,
+        "useUnknownInCatchVariables": false,
+        "plugins": [
+            { "name": "typescript-plugin-css-modules" },
+            {
+                "name": "gql.tada/ts-plugin",
+                "shouldCheckForColocatedFragments": false,
+                "schemas": [
+                    {
+                        "name": "reco",
+                        "schema": "./schema.graphql",
+                        "tadaOutputLocation": "./src/graphql-env.d.ts"
+                    }
+                ]
+            }
+        ]
+    },
+    "include": ["src/**/*", "tests/**/*"],
+    "exclude": ["node_modules"],
+    "extends": "./tsconfig.paths.json",
+    "references": [{ "path": "./tsconfig.node.json" }]
+}

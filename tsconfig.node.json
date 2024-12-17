@@ -1,0 +1,9 @@
+{
+    "compilerOptions": { "composite": true },
+    "include": [
+        "__vite.config.ts",
+        "vite.outputPluginStats.plugin.ts",
+        "vite.requestAnalytics.plugin.ts",
+        "vite.hotUpdateReport.plugin.ts"
+    ]
+}
