@@ -7,8 +7,8 @@ export const MenuItem: React.FC<{ to: string; title: string }> = ({ to, title })
             to={to}
             className={(data) => {
                 return cn(
-                    'text-white px-4 min-w-[77px] flex items-center justify-center h-[calc(100%-16px)]',
-                    `${data.isActive ? 'border-solid border-3 border-t-transparent border-l-transparent border-r-transparent' : ''}`,
+                    'text-white px-4 min-w-[77px] flex items-center rounded-none justify-center h-[calc(100%-10px)] border-solid border-y-[5px] border-l-[0px] border-r-[0px]  border-transparent',
+                    `${data.isActive && 'border-b-white border-l-[0px] border-r-[0px]'}`,
                 )
             }}
         >
