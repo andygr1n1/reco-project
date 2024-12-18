@@ -6,6 +6,7 @@ declare global {
 
 interface ImportMetaEnv {
     readonly VITE_NODE_ENV: string
+    readonly VITE_END_POINT: string
     // more env variables...
 }
 
