@@ -1,6 +1,8 @@
 import { useRoot$ } from '@/mst/StoreProvider'
 import { List } from 'antd'
 import { observer } from 'mobx-react-lite'
+import { AboutCompanyUserInfo } from './AboutCompanyUserInfo'
+import type { IUser } from '@/mst/types'
 
 export const AboutCompanyUsersList = observer(() => {
     const { selectedCompany } = useRoot$()
@@ -10,22 +12,10 @@ export const AboutCompanyUsersList = observer(() => {
 
     return (
         <div>
-            {/* {users.map((user) => (
-                <div key={user.id}>{user.name}</div>
-            ))} */}
-            <List
+            <List<IUser>
                 header='Username'
                 dataSource={users}
-                renderItem={(item) => (
-                    <List.Item>
-                        <div className='flex items-center gap-2'>
-                            <div>
-                                <img src={item.pic} alt={item.name} width={32} height={32} className='rounded-full' />
-                            </div>
-                            <div>{item.name}</div>
-                        </div>
-                    </List.Item>
-                )}
+                renderItem={(user) => <AboutCompanyUserInfo key={user.id} user={user} />}
             />
         </div>
     )
