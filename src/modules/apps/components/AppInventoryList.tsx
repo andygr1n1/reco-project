@@ -33,6 +33,7 @@ export const AppInventoryList = observer(() => {
                         const id = record.id
                         fetchSelectedCompany({ id })
                     },
+                    className: 'cursor-pointer',
                 })}
                 pagination={{
                     position: ['bottomCenter'],
