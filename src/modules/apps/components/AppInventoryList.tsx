@@ -38,7 +38,7 @@ export const AppInventoryList = observer(() => {
                     position: ['bottomCenter'],
                     defaultPageSize: 25,
                     pageSizeOptions: [25, 50],
-                    total: companies.length,
+                    total,
                     showSizeChanger: true,
                 }}
             />
