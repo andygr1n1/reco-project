@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react'
 import toast from 'react-hot-toast'
 
-export const processError = (content: string, showToast = true) => {
-    showToast && toast.error(<div>{content}</div>)
+export const processError = (content: unknown, showToast = true) => {
+    const stringContent = String(content)
+    showToast && toast.error(<div>{stringContent}</div>)
     console.info('==>')
-    content && console.error(`${content}:`)
+    content && console.error(`${stringContent}:`)
     console.info('<==')
+    return undefined
 }
 
 export const notify = (message?: ReactNode, props?: { message: ReactNode }) =>
