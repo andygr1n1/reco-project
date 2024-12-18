@@ -23,11 +23,11 @@
 
     html,
     body {
-        @apply scrollbar-thumb-blue-500/10 scrollbar-track-transparent scrollbar-thin font-inter flex h-full w-full flex-col overflow-hidden text-base;
+        @apply scrollbar-thumb-blue-500/10 scrollbar-thin font-inter flex h-full w-full flex-col text-base;
     }
 
     #root {
-        @apply scrollbar-thumb-blue-500/50 relative scrollbar-track-transparent scrollbar-thin flex w-full flex-auto overflow-hidden;
+        @apply scrollbar-thumb-blue-500/50 relative  scrollbar-thin flex w-full flex-auto;
     }
 
     div {
@@ -117,4 +117,8 @@
     .scroll-style {
         @apply scrollbar-thumb-blue-500/10 scrollbar-track-transparent scrollbar-thin;
     }
+}
+
+.border-b-solid {
+    border-bottom-style: solid;
 }

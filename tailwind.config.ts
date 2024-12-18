@@ -12,7 +12,9 @@ module.exports = {
             inter: ['Inter', defaultConfig.theme.fontFamily.sans],
         },
         extend: {
-            colors: {},
+            colors: {
+                recoblue: '#1F5CED',
+            },
             animation: animation.animation,
             keyframes: animation.keyframes,
             screens: {},

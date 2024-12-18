@@ -1,19 +1,24 @@
-import { APP_ROUTES_ENUM } from '@/helpers/enums'
+import { Topbar } from '@/components/top-bar/Topbar'
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
-const RecoStart = lazy(() => import('../modules/reco-start/RecoStart'))
+const Apps = lazy(() => import('../modules/apps/Apps'))
 
 export const Layout = () => {
     return (
-        <Suspense fallback={null}>
+        <div className='w-full h-full flex flex-col'>
             <BrowserRouter basename='/' future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-                <Routes>
-                    <Route path={`/`} element={<RecoStart />} />
-                    <Route path={`/${APP_ROUTES_ENUM.ABOUT}/*`} element={<RecoStart />} />
-                    <Route path={'/*'} element={<Navigate to={`/`} />} />
-                </Routes>
+                <Topbar />
+                <Suspense fallback={null}>
+                    <Routes>
+                        <Route path={`/`} element={<Apps />} />
+                        <Route path={`/apps`} element={<Apps />} />
+                        <Route path={`/data`} element={<Apps />} />
+                        <Route path={'/'} element={<Navigate to={`/apps`} />} />
+                        <Route path={'/*'} element={<Navigate to={`/apps`} />} />
+                    </Routes>
+                </Suspense>
             </BrowserRouter>
-        </Suspense>
+        </div>
     )
 }

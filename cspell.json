@@ -1,7 +1,18 @@
 {
     "version": "0.2",
     "language": "en, ru",
-    "words": ["allselect", "mertasan", "noselect", "Reco", "wurl"],
-    "ignorePaths": ["yarn.lock"],
-    "ignoreRegExpList": ["enum.*"]
+    "words": [
+        "allselect",
+        "mertasan",
+        "noselect",
+        "Reco",
+        "recoblue",
+        "wurl"
+    ],
+    "ignorePaths": [
+        "yarn.lock"
+    ],
+    "ignoreRegExpList": [
+        "enum.*"
+    ]
 }
