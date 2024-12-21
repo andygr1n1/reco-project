@@ -1,9 +1,10 @@
-import type { IUser } from '@/mst/types'
 import { List } from 'antd'
 import { observer } from 'mobx-react-lite'
 import noImg from '/img/no-img.png'
+import type { IUser } from '@/modules/apps/stores/types'
 export const AboutCompanyUserInfo: React.FC<{ user: IUser }> = observer(({ user }) => {
     const { pic, name } = user
+
     return (
         <List.Item>
             <div className='flex items-center gap-2'>

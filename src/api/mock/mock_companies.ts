@@ -1,4 +1,4 @@
-import type { ICompany } from '@/helpers/types'
+import type { ICompany } from '@/modules/apps/stores/types'
 
 export const mockCompanies: ICompany[] = [
     {

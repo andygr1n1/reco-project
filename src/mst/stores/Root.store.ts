@@ -1,6 +1,4 @@
-import { server_getCompanies } from '@/api/server_getCompanies'
-import { optimizeCompanies } from '@/modules/apps/helpers/optimizeCompanies'
-import { applySnapshot, castToSnapshot, flow, toGenerator, types } from 'mobx-state-tree'
+import { castToSnapshot, flow, toGenerator, types } from 'mobx-state-tree'
 import { Company$ } from './Company.store'
 import { processError } from '@/helpers/processMessage'
 import { SelectedCompany$ } from './SelectedCompany.store'
@@ -25,18 +23,6 @@ export const Root$ = types
             self[key] = value
         },
 
-        fetchCompanies: flow(function* () {
-            try {
-                self.companiesIsLoading = true
-                const companies = yield* toGenerator(server_getCompanies())
-                const optimized = optimizeCompanies(companies)
-                applySnapshot(self.companies, optimized)
-            } catch (e) {
-                processError(e)
-            } finally {
-                self.companiesIsLoading = false
-            }
-        }),
         fetchSelectedCompany: flow(function* ({ id }: { id: string }) {
             try {
                 self.selectedCompanyIsLoading = true

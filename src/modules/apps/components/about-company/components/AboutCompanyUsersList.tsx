@@ -1,11 +1,12 @@
-import { useRoot$ } from '@/mst/StoreProvider'
 import { List } from 'antd'
 import { observer } from 'mobx-react-lite'
 import { AboutCompanyUserInfo } from './AboutCompanyUserInfo'
-import type { IUser } from '@/mst/types'
+import { useAppSelector } from '@/store/useRootStore'
+import { selectSelectedCompany } from '@/modules/apps/stores/appInventoryList.slice'
+import type { IUser } from '@/modules/apps/stores/types'
 
 export const AboutCompanyUsersList = observer(() => {
-    const { selectedCompany } = useRoot$()
+    const selectedCompany = useAppSelector(selectSelectedCompany)
     if (!selectedCompany) return null
 
     const { users } = selectedCompany

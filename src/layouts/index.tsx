@@ -1,4 +1,5 @@
 import { Topbar } from '@/components/top-bar/Topbar'
+import { ReduxToolkit } from '@/modules/counter/Counter'
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
@@ -13,7 +14,7 @@ export const Layout = () => {
                     <Routes>
                         <Route path={`/`} element={<Apps />} />
                         <Route path={`/apps`} element={<Apps />} />
-                        <Route path={`/data`} element={<Apps />} />
+                        <Route path={`/redux-toolkit`} element={<ReduxToolkit />} />
                         <Route path={'/'} element={<Navigate to={`/apps`} />} />
                         <Route path={'/*'} element={<Navigate to={`/apps`} />} />
                     </Routes>

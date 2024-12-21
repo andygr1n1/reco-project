@@ -1,15 +1,17 @@
-import { useRoot$ } from '@/mst/StoreProvider'
 import { Drawer } from 'antd'
 import { observer } from 'mobx-react-lite'
 import { AboutCompanyHeader } from './components/AboutCompanyHeader'
 import { AboutCompanyInfo } from './components/AboutCompanyInfo'
 import { AboutCompanyUsersList } from './components/AboutCompanyUsersList'
+import { useDispatch } from 'react-redux'
+import { removeSelectedCompany, selectSelectedCompany } from '../../stores/appInventoryList.slice'
+import { useAppSelector } from '@/store/useRootStore'
 
 export const AboutCompany = observer(() => {
-    const { selectedCompany, onChangeField } = useRoot$()
-
+    const dispatch = useDispatch()
+    const selectedCompany = useAppSelector(selectSelectedCompany)
     const onClose = () => {
-        onChangeField('selectedCompany', undefined)
+        dispatch(removeSelectedCompany())
     }
 
     if (!selectedCompany) return null

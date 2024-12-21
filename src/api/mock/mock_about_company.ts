@@ -1,4 +1,6 @@
-export const mockAboutCompany = {
+import type { ISelectedCompany } from '@/modules/apps/stores/types'
+
+export const mockAboutCompany: ISelectedCompany = {
     appId: '0',
     name: 'Zoom',
     category: 'Video Conferencing & Collaboration Software',
@@ -63,4 +65,3 @@ export const mockAboutCompany = {
         },
     ],
 }
-

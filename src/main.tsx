@@ -1,21 +1,23 @@
 import ReactDOM from 'react-dom/client'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'react-hot-toast'
 import { App } from './App'
 import { App as AntdApp } from 'antd'
-import { root$, Root$Provider } from './mst/StoreProvider'
+import { Provider } from 'react-redux'
+import { root$ as reduxStore$ } from './store/root.store'
 import './styles/index.scss'
 
-const queryClient = new QueryClient()
+// const queryClient = new QueryClient()
 
 const Main = () => {
     return (
-        <QueryClientProvider client={queryClient}>
+        <>
+            {/* <QueryClientProvider client={queryClient}> */}
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
             <AntdApp className='w-full h-full flex'>
-                <Root$Provider store={root$}>
+                <Provider store={reduxStore$}>
                     <App />
-                </Root$Provider>
+                </Provider>
             </AntdApp>
             <Toaster
                 toastOptions={{
@@ -25,7 +27,8 @@ const Main = () => {
                     },
                 }}
             />
-        </QueryClientProvider>
+            {/*  </QueryClientProvider> */}
+        </>
     )
 }
 
